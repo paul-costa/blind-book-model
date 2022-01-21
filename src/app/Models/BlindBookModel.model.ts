@@ -93,4 +93,4 @@ export class WokeBookModel extends BlindBookModel {
     precedingKnowledgeNeeded: undefined | PrecedingKnowledgeNeeded[];
     motive: Theme[];
   };
-}
+// }sdgfs
