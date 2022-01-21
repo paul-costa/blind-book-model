@@ -92,5 +92,4 @@ export class WokeBookModel extends BlindBookModel {
     price: undefined | nomScale;
     precedingKnowledgeNeeded: undefined | PrecedingKnowledgeNeeded[];
     motive: Theme[];
-  };
-}
+  }
