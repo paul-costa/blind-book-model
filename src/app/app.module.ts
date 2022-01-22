@@ -3,12 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BlindDateBookModelComponent } from './Models/blind-date-book-model/blind-date-book-model.component';
+import { CollectionsComponent } from './collections/collections.component';
+import { FirstPageComponent } from './first-page/first-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BlindDateBookModelComponent
+    FirstPageComponent,
+    CollectionsComponent
   ],
   imports: [
     BrowserModule,
