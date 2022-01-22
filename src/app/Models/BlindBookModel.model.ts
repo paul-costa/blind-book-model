@@ -42,7 +42,7 @@ export class BlindBookModel {
 
   dimensions: {
     heightWidth?: nomScale;
-    backType?: 'paper' | 'hard';
+
   };
 
   character: {
@@ -88,6 +88,7 @@ export enum Theme {
 export class WokeBookModel {
   dimensions: {
     length?: nomScale;
+    backType?: 'paper' | 'hard';
   };
 
   additionalInformation: {
