@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FirstPageComponent } from './first-page/first-page.component';
 
 const routes: Routes = [
-  { path: '**', redirectTo: 'start' },
+  { path: '**', redirectTo: 'star' },
   { path: 'start', component: FirstPageComponent }
 ];
 

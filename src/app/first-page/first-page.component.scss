@@ -1,0 +1,28 @@
+
+  .container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .card {
+      width: 80%;
+      height: 80%;
+      max-width: 600px;
+      max-height: 800px;
+
+      background-color: rgb(235, 235, 235);
+
+      @media (max-width: 600px) {
+        max-width: none;
+        max-height: none;
+        width: 100%;
+        height: 100%;
+      }
+
+      mat-card-actions {
+
+      }
+    }
+  }
+
