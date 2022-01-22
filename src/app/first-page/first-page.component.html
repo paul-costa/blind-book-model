@@ -1,1 +1,27 @@
-<p>first-page works!</p>
+
+  <div class="container">
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-card-title>Date with a Book</mat-card-title>
+        <div>Filter
+          <button mat-fab color="secondary" (click)="onExpandFilter()">
+            <mat-icon>expand_more</mat-icon>
+          </button>
+        </div>
+      </mat-card-header>
+
+      <mat-card-content>
+        <!-- book image -->
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-fab color="secondary" (click)="onExpandFilter()">
+          <mat-icon>navigate_before</mat-icon>
+        </button>
+        <button mat-button>read more</button>
+        <button mat-fab color="secondary" (click)="onExpandFilter()">
+          <mat-icon>navigate_next</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>

@@ -1,4 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
+import { BookModel } from '../first-page/first-page.component';
 import { BlindBookModel, WokeBookModel } from '../Models/BlindBookModel.model';
 
 @Injectable({

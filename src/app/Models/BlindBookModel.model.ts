@@ -35,6 +35,11 @@ export enum Series {
 
 // first stage
 export class BlindBookModel {
+  backend: {
+    isbn: string;
+    url: {buy: string, goodreads: string, storygraph: string};
+  };
+
   dimensions: {
     heightWidth?: nomScale;
     backType?: 'paper' | 'hard';
@@ -89,5 +94,6 @@ export class WokeBookModel {
     price?: undefined | nomScale;
     precedingKnowledgeNeeded?: undefined | PrecedingKnowledgeNeeded[];
     motive?: Theme[];
+    additionalText?: string;
   }
 }
