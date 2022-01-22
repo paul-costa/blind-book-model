@@ -21,7 +21,7 @@ export class FirstPageComponent implements OnInit {
   constructor(private getCollectionService: GetCollectionService) { }
 
   ngOnInit(): void {
-    this.bookCollection = this.getCollectionService.fillBookCollection() as BookModel[];
+    this.bookCollection = this.getCollectionService.fillBookCollection();
     this.selectedBook = this.bookCollection[0];
   }
 

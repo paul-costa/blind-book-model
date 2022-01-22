@@ -35,17 +35,16 @@ export enum Series {
 
 // first stage
 export class BlindBookModel {
-  backend: {
-    isbn: string;
-    url: {buy: string, goodreads: string, storygraph: string};
+  backend?: {
+    isbn?: string;
+    url?: {buy: string, goodreads: string, storygraph: string};
   };
 
-  dimensions: {
+  dimensions?: {
     heightWidth?: nomScale;
-
   };
 
-  character: {
+  character?: {
     genreName?: GenreNames[];
     trigger?: undefined | Trigger[];
     mood?: Mood[];
@@ -54,7 +53,7 @@ export class BlindBookModel {
     adaption?: undefined | false | 'book-to-new-media' | 'new-media-to-book';
   };
 
-  additionalInformation: {
+  additionalInformation?: {
     text?: string;           // min 280 zeichen
   };
 }
@@ -86,12 +85,12 @@ export enum Theme {
 
 // second stage
 export class WokeBookModel {
-  dimensions: {
+  dimensions?: {
     length?: nomScale;
     backType?: 'paper' | 'hard';
   };
 
-  additionalInformation: {
+  additionalInformation?: {
     price?: undefined | nomScale;
     precedingKnowledgeNeeded?: undefined | PrecedingKnowledgeNeeded[];
     motive?: Theme[];
