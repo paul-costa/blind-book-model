@@ -1,13 +1,24 @@
 
   <div class="container">
     <mat-card class="card">
-      <mat-card-header>
-        <mat-card-title>Blind Date with a Book</mat-card-title>
-        <div>Filter
-          <button mat-fab color="secondary" (click)="onExpandFilter()">
-            <mat-icon>expand_more</mat-icon>
-          </button>
+      <mat-card-header class="mat-card-header">
+        <div class="header-box">
+          <mat-card-title class="title">Blind Date with a Book</mat-card-title>
         </div>
+
+        <div class="filter-section">
+
+          <mat-divider class="divider"></mat-divider>
+          <div class="filter-text">
+            <span class="spacer"></span> <span>Filter</span> <mat-icon (click)="onExpandFilter()">expand_more</mat-icon>
+          </div>
+          <mat-divider class="divider"></mat-divider>
+
+          <div class="filter-menue">
+
+          </div>
+        </div>
+        <mat-divider></mat-divider>
       </mat-card-header>
 
       <mat-card-content>

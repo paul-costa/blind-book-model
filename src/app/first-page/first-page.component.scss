@@ -6,12 +6,47 @@
     align-items: center;
 
     .card {
+      display: flex;
+      justify-content: space-between;
+
+
+      .mat-card-header {
+        display: flex;
+        flex-direction: column;
+
+        .header-box {
+          padding: 36px 0 12px 0;
+          text-align: center;
+          width: 100%;
+
+          mat-card-header {
+            .title {font-family: 'Dancing Script Regular';}
+          }
+        }
+
+        .filter-section {
+
+          .divider {
+            color:rgb(235, 235, 235);
+            border-top-width: 2px;
+          }
+          .filter-text {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+          padding: 12px;
+          }
+        }
+      }
+
+
       width: 80%;
       height: 80%;
       max-width: 600px;
       max-height: 800px;
 
-      background-color: rgb(235, 235, 235);
+      background-color: rgb(75, 75, 75);
 
       @media (max-width: 600px) {
         max-width: none;
