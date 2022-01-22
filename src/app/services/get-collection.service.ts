@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
-import { BookModel, GenreNames, Mood, nomScale, RelatedFields, Series, Theme, Trigger } from '../Models/BlindBookModel.model';
+import { BookModel, GenreNames, Mood, NomScale, RelatedFields, Series, Trigger } from '../Models/BlindBookModel.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,22 +16,21 @@ export class GetCollectionService {
         url: {buy: 'string', goodreads: 'string', storygraph: 'string'},
       },
       dimensions:{
-        length: nomScale.middle,
+        length: NomScale.middle,
       },
 
       character:{
         genreName: [GenreNames.Fantasy],
         trigger: [Trigger.drugs],
         mood: [Mood.dark],
-        paced: nomScale.low,
+        paced: NomScale.low,
         series: Series.standalone,
         adaption: 'to-be-concluded',
       },
       additionalInformation:{
         text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus amet aliquam quisquam ullam omnis eligendi laudantium, alias quos porro cupiditate dolore vitae velit fugit deserunt ex repellat dignissimos perferendis quidem.',
-        price: nomScale.high,
+        price: NomScale.high,
         relatedFields: [this.getRelatedFields().rel, this.getRelatedFields().tech],
-        theme: [Theme.anarchy],
         additionalText: 'addy',
       },
     }

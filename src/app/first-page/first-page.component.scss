@@ -6,26 +6,45 @@
     align-items: center;
 
     .card {
+      padding: 0 16px;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+
+      width: 60%;
+      height: 80%;
+      max-width: 600px;
+      max-height: 800px;
+
+      background-color: rgb(125,125,125);
+
+      display: flex;
+      flex-direction: column;
+
+      @media (max-width: 600px) {
+        max-width: none;
+        max-height: none;
+        width: 100%;
+        height: 100%;
+      }
 
 
       .mat-card-header {
         display: flex;
         flex-direction: column;
+        flex-shrink: 0;
 
         .header-box {
           padding: 36px 0 12px 0;
           text-align: center;
           width: 100%;
 
-          mat-card-header {
-            .title {font-family: 'Dancing Script Regular';}
+          .title {
+            font-family: 'Brush Script MT' !important;
+            font-size: 32pt;
           }
         }
 
         .filter-section {
-
           .divider {
             color:rgb(235, 235, 235);
             border-top-width: 2px;
@@ -40,23 +59,70 @@
         }
       }
 
+      .mat-card-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        overflow: auto;
+        margin: 0;
 
-      width: 80%;
-      height: 80%;
-      max-width: 600px;
-      max-height: 800px;
+        .book-img {
+          position: absolute;
+          width: 100%;
 
-      background-color: rgb(75, 75, 75);
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
 
-      @media (max-width: 600px) {
-        max-width: none;
-        max-height: none;
-        width: 100%;
-        height: 100%;
+          max-width: 60%;
+          max-height: 80%;
+
+          @media (max-width: 600px) {
+            max-width: 80%;
+          }
+        }
+
+        .inner-mat-card {
+          background-color: rgb(75, 75, 75);
+          width: 100%;
+          height: 100%;
+
+          margin-top: -36px;
+
+          border-radius: 24px;
+
+          max-width: 40%;
+          max-height: 70%;
+
+          @media (max-width: 1024px) {
+            max-width: 45%;
+            max-height: 55%;
+          }
+
+          @media (max-width: 600px) {
+            max-width: 50%;
+            max-height: 45%;
+          }
+        }
       }
 
-      mat-card-actions {
 
+      mat-card-actions {
+        display: flex;
+        margin: 0;
+        padding-bottom: 48px;
+        justify-content: space-evenly;
+
+        .mat-raised-button {
+          width: 86px;
+          background-color: rgb(235, 235, 235);
+          color: rgb(75,75,75);
+        }
+
+        .fab-button {
+          background-color: rgb(240, 50, 90);
+        }
       }
     }
   }

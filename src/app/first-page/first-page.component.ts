@@ -28,12 +28,7 @@ export class FirstPageComponent implements OnInit {
     this.expanded = true;
   }
 
-  onFlipBook() {
-
-  }
-
-  public onNextBook() {
-    // this.selectedBook = this.bookCollection.find(book => book.blind.backend.isbn === book.blind.backend.isbn)
+  onNavigateBook(type: 'prev' | 'next') {
 
   }
 }

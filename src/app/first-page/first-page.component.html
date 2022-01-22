@@ -7,33 +7,55 @@
         </div>
 
         <div class="filter-section">
-
           <mat-divider class="divider"></mat-divider>
-          <div class="filter-text">
+          <div class="filter-text" style="visibility: hidden;">
             <span class="spacer"></span> <span>Filter</span> <mat-icon (click)="onExpandFilter()">expand_more</mat-icon>
           </div>
           <mat-divider class="divider"></mat-divider>
 
           <div class="filter-menue">
-
+            <!-- TODO: implement filter menu -->
           </div>
         </div>
         <mat-divider></mat-divider>
       </mat-card-header>
 
       <mat-card-content>
-        <!-- book image -->
+        <img src="../../assets/book.png" class="book-img">
+
+
+          <mat-card class="inner-mat-card">
+            <!-- TODO (Textfelder) -->
+            <!-- Genre, Mood, Triggerwarnung -->
+            <!-- Series, Pace & Adaption -->
+            <!-- abstand -->
+            <!-- Textfeld für additionalInfo.text -->
+          </mat-card>
+
+            <!-- TODO -->
+            <!-- Length (text: short, medium, long) -->
+            <!-- Price: filled Euro Icons (eg. 1/3) -->
+            <!-- Related Fields: ausklappbar mit relatedFields[0].additional in einer Zeile mit wordwrap -->
+            <!-- abstand -->
+
+            <!-- mat-mini-fab buttons für screenshot sharing /link  -->
+            <!-- amazon-buy -->
+            <!-- goodreads -->
+            <!-- storygraph -->
+            <!-- share content of both book covers in nicely rendered image -->
       </mat-card-content>
 
-      <mat-card-actions>
-        <button mat-mini-fab color="secondary" (click)="onExpandFilter()">
-          <mat-icon>navigate_before</mat-icon>
-        </button>
-        <button mat-raised-button>read more</button>
-        <button mat-mini-fab color="secondary" (click)="onExpandFilter()">
-          <mat-icon>navigate_next</mat-icon>
-        </button>
-      </mat-card-actions>
+        <mat-card-actions>
+          <button mat-raised-button color="secondary" [ngStyle]="{'opacity: 0.25': this.selectedBook === this.bookCollection[0]}" (click)="onNavigateBook('prev')">
+            <mat-icon>navigate_before</mat-icon>
+          </button>
+          <button mat-mini-fab class="fab-button">
+            <mat-icon>arrow_circle_down</mat-icon>
+          </button>
+          <button mat-raised-button color="secondary" (click)="onNavigateBook('next')">
+            <mat-icon>navigate_next</mat-icon>
+          </button>
+        </mat-card-actions>
     </mat-card>
   </div>
 

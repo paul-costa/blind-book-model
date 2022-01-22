@@ -21,7 +21,7 @@ export enum Mood { // max 8
 }
 
 
-export enum nomScale {
+export enum NomScale {
   'low',
   'middle',
   'high'
@@ -40,38 +40,25 @@ export class BookModel {
   };
 
   dimensions: {
-    heightWidth?: nomScale;
-     length: nomScale;
+    heightWidth?: NomScale;
+     length: NomScale;
   };
 
   character: {
     genreName: GenreNames[];          // min 1 entry
     trigger: Trigger[];
     mood: Mood[];         // min 1 entry
-    paced: nomScale;
+    paced: NomScale;
     series?: Series;
     adaption?: 'to-be-concluded' | 'book-to-new-media' | 'new-media-to-book';
   };
 
   additionalInformation: {
     text: string;           // min 24 zeichen max 480
-    price?: nomScale;
+    price?: NomScale;
     relatedFields: RelatedFieldsEntry[];
-    theme?: Theme[];
     additionalText?: string;
   };
-}
-
-
-
-export enum Theme {
-  'revenge',
-  'love',
-  'growth',
-  'balance',
-  'unity',
-  'anarchy',
-  'misc',
 }
 
 export interface RelatedFields {
