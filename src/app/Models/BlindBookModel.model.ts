@@ -8,15 +8,16 @@ export enum GenreNames {
 }
 
 
-export enum Trigger {
+export enum Trigger { // max 5
   'sh/su',
   'drugs',
   'rape'
 }
 
-export enum Mood {
+export enum Mood { // max 8
   'dark',
-  'light'
+  'light',
+
 }
 
 
@@ -27,50 +28,41 @@ export enum nomScale {
 }
 
 export enum Series {
-  false,
   'standalone',
   'series',
 }
 
-
 // first stage
-export class BlindBookModel {
-  backend?: {
-    isbn?: string;
-    url?: {buy: string, goodreads: string, storygraph: string};
+export class BookModel {
+  backend: {
+    isbn: string;
+    url?: {buy?: string, goodreads?: string, storygraph?: string};
   };
 
-  dimensions?: {
+  dimensions: {
     heightWidth?: nomScale;
+     length: nomScale;
   };
 
-  character?: {
-    genreName?: GenreNames[];
-    trigger?: undefined | Trigger[];
-    mood?: Mood[];
-    paced?: nomScale;
+  character: {
+    genreName: GenreNames[];          // min 1 entry
+    trigger: Trigger[];
+    mood: Mood[];         // min 1 entry
+    paced: nomScale;
     series?: Series;
-    adaption?: undefined | false | 'book-to-new-media' | 'new-media-to-book';
+    adaption?: 'to-be-concluded' | 'book-to-new-media' | 'new-media-to-book';
   };
 
-  additionalInformation?: {
-    text?: string;           // min 280 zeichen
+  additionalInformation: {
+    text: string;           // min 24 zeichen max 480
+    price?: nomScale;
+    relatedFields: RelatedFieldsEntry[];
+    theme?: Theme[];
+    additionalText?: string;
   };
 }
 
 
-export enum PrecedingKnowledgeNeeded {
-  'religion',
-  'history',
-  'sociology',
-  'philosophy',
-  'psychology',
-  'stem',
-  'politics',
-  'economy',
-  'law',
-  'technology',
-}
 
 export enum Theme {
   'revenge',
@@ -79,21 +71,24 @@ export enum Theme {
   'balance',
   'unity',
   'anarchy',
-  'misc'
+  'misc',
+}
+
+export interface RelatedFields {
+    rel: RelatedFieldsEntry,
+    his: RelatedFieldsEntry,
+    soc: RelatedFieldsEntry,
+    phil: RelatedFieldsEntry,
+    psy: RelatedFieldsEntry,
+    stem: RelatedFieldsEntry,
+    pol: RelatedFieldsEntry,
+    eco: RelatedFieldsEntry,
+    law: RelatedFieldsEntry,
+    tech: RelatedFieldsEntry,
 }
 
 
-// second stage
-export class WokeBookModel {
-  dimensions?: {
-    length?: nomScale;
-    backType?: 'paper' | 'hard';
-  };
-
-  additionalInformation?: {
-    price?: undefined | nomScale;
-    precedingKnowledgeNeeded?: undefined | PrecedingKnowledgeNeeded[];
-    motive?: Theme[];
-    additionalText?: string;
-  }
+export interface RelatedFieldsEntry {
+  title: string,
+  additional?: string[]
 }

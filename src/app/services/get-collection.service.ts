@@ -1,6 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
-import { BookModel } from '../first-page/first-page.component';
-import { BlindBookModel, WokeBookModel } from '../Models/BlindBookModel.model';
+import { BookModel, GenreNames, Mood, nomScale, RelatedFields, Series, Theme, Trigger } from '../Models/BlindBookModel.model';
 
 @Injectable({
   providedIn: 'root'
@@ -8,106 +7,66 @@ import { BlindBookModel, WokeBookModel } from '../Models/BlindBookModel.model';
 export class GetCollectionService {
 
 
-
   constructor() {}
 
   public fillBookCollection(): BookModel[] {
-    const books = [];
-
-    books.push({
-      blind: {
-        dimensions: {
-          heightWidth: undefined,
-          backType: undefined,
-        },
-        character: {
-          genreName: undefined,
-          trigger: undefined,
-          mood: undefined,
-          paced: undefined,
-          series: undefined,
-          adaption: undefined,
-        },
-        additionalInformation: {
-          text: undefined,
-        },
+    const book1: BookModel = {
+      backend:{
+        isbn: '123',
+        url: {buy: 'string', goodreads: 'string', storygraph: 'string'},
       },
-      woke: {
-          dimensions: {
-
-            length: undefined,
-          },
-
-          additionalInformation: {
-            price: undefined,
-            precedingKnowledgeNeeded: undefined,
-            motive: undefined,
-          }
-        },
-      });
-
-      books.push({
-        blind: {
-          dimensions: {
-            heightWidth: undefined,
-            backType: undefined,
-          },
-          character: {
-            genreName: undefined,
-            trigger: undefined,
-            mood: undefined,
-            paced: undefined,
-            series: undefined,
-            adaption: undefined,
-          },
-          additionalInformation: {
-            text: undefined,
-          },
-        },
-        woke: {
-          dimensions: {
-            length: undefined,
-          },
-
-          additionalInformation: {
-            price: undefined,
-            precedingKnowledgeNeeded: undefined,
-            motive: undefined,
-          }
-        },
-      });
-
-      books.push({
-        blind: {
-          dimensions: {
-            heightWidth: undefined,
-            backType: undefined,
-          },
-          character: {
-            genreName: undefined,
-            trigger: undefined,
-            mood: undefined,
-            paced: undefined,
-            series: undefined,
-            adaption: undefined,
-          },
-          additionalInformation: {
-            text: undefined,
-          },
+      dimensions:{
+        length: nomScale.middle,
       },
-      woke: {
-          dimensions: {
 
-            length: undefined,
-          },
+      character:{
+        genreName: [GenreNames.Fantasy],
+        trigger: [Trigger.drugs],
+        mood: [Mood.dark],
+        paced: nomScale.low,
+        series: Series.standalone,
+        adaption: 'to-be-concluded',
+      },
+      additionalInformation:{
+        text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus amet aliquam quisquam ullam omnis eligendi laudantium, alias quos porro cupiditate dolore vitae velit fugit deserunt ex repellat dignissimos perferendis quidem.',
+        price: nomScale.high,
+        relatedFields: [this.getRelatedFields().rel, this.getRelatedFields().tech],
+        theme: [Theme.anarchy],
+        additionalText: 'addy',
+      },
+    }
 
-          additionalInformation: {
-            price: undefined,
-            precedingKnowledgeNeeded: undefined,
-            motive: undefined,
-          }
-        },
-      });
+    return [book1, book1, book1];
+}
 
-    return books;
-}}
+
+
+
+  public getRelatedFields(): RelatedFields {
+    return {
+      rel: {title: 'Religion', additional:[]},
+      his: {title: 'History', additional:[]},
+      soc: {title: 'Sociology', additional:[]},
+      phil: {title: 'Philosophy', additional:[]},
+      psy: {title: 'Psychology', additional:[]},
+      stem: {title: 'STEM fields', additional:[]},
+      pol: {title: 'Politics', additional:[]},
+      eco: {title: 'Economy', additional:[]},
+      law: {title: 'Law', additional:[]},
+      tech: {title: 'Technology', additional:[]},
+    };
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
