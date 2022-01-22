@@ -82,7 +82,7 @@ export enum Theme {
 // second stage
 export class WokeBookModel {
   dimensions: {
-    length?: nomScale;
+    length?: nomScale
     backType?: 'paper' | 'hard';
   };
 
