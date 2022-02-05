@@ -9,7 +9,7 @@
         <div class="filter-section">
           <mat-divider class="divider"></mat-divider>
           <div class="filter-text" style="visibility: hidden;">
-            <span class="spacer"></span> <span>Filter</span> <mat-icon (click)="onExpandFilter()">expand_more</mat-icon>
+            <span class="spacer"></span> <span>Filter</span> <mat-icon (click)="expanded = !expanded">{{expanded ? 'expand_less' :'expand_more'}}</mat-icon>
           </div>
           <mat-divider class="divider"></mat-divider>
 
@@ -23,7 +23,6 @@
       <mat-card-content>
         <!-- <img src="../../assets/book.png" class="book-img"> -->
         <div class="book-img"></div>
-
 
           <mat-card class="inner-mat-card">
             <!-- TODO (Textfelder) -->
@@ -47,13 +46,13 @@
       </mat-card-content>
 
         <mat-card-actions>
-          <button mat-raised-button color="secondary" [ngStyle]="{'opacity: 0.25': this.selectedBook === this.bookCollection[0]}" (click)="onNavigateBook('prev')">
+          <button mat-raised-button color="secondary" [ngStyle]="{'opacity: 0.25': this.selectedBook === this.bookCollection[0]}" (click)="onNavigate('prev')">
             <mat-icon>navigate_before</mat-icon>
           </button>
           <button mat-mini-fab class="fab-button">
             <mat-icon>arrow_circle_down</mat-icon>
           </button>
-          <button mat-raised-button color="secondary" (click)="onNavigateBook('next')">
+          <button mat-raised-button color="secondary" (click)="onNavigate('next')">
             <mat-icon>navigate_next</mat-icon>
           </button>
         </mat-card-actions>

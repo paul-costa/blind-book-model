@@ -24,11 +24,7 @@ export class FirstPageComponent implements OnInit {
     console.log(this.bookCollection)
   }
 
-  onExpandFilter() {
-    this.expanded = true;
-  }
-
-  onNavigateBook(type: 'prev' | 'next') {
+  onNavigate(type: 'prev' | 'next') {
 
   }
 }
