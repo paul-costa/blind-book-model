@@ -2,9 +2,21 @@
 export enum GenreNames {
   'Fantasy',
   'Romance',
-  'Thriller',
-  'young adult',
-  'non-fiction'
+  'Thriller & Crime',
+  'Young Adult',
+  'Non-fiction',
+  'Classical Literature',
+  'Dystopia',
+  'Erotica',
+  'Historical',
+  'Horror',
+  'LGBTQIA+',
+  'Magical Realism',
+  'Mystery',
+  'Philosophy',
+  'Science Fiction',
+  'Self-Help',
+  'Travel',
 }
 
 
