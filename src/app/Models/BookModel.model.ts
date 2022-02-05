@@ -57,9 +57,9 @@ export class BookModel {
   };
 
   character: {
-    genreName: GenreNames[];          // min 1 entry
+    genreName: GenreNames[];  // min 1 entry
     trigger: Trigger[];
-    mood: Mood[];         // min 1 entry
+    mood: Mood[];             // min 1 entry
     paced: NomScale;
     series?: Series;
     adaption?: 'to-be-concluded' | 'book-to-new-media' | 'new-media-to-book';

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BookModel} from '../Models/BlindBookModel.model';
+import { BookModel, GenreNames, Mood, Trigger} from '../Models/BookModel.model';
 import { GetCollectionService } from '../services/get-collection.service';
 
 
@@ -14,14 +14,15 @@ export class FirstPageComponent implements OnInit {
 
   public expanded = false;
 
+  public genreNames = GenreNames;
+  public mood = Mood;
+  public trigger = Trigger;
 
   constructor(private getCollectionService: GetCollectionService) { }
 
   ngOnInit(): void {
     this.bookCollection = this.getCollectionService.fillBookCollection();
     this.selectedBook = this.bookCollection[0];
-
-    console.log(this.bookCollection)
   }
 
   onNavigate(type: 'prev' | 'next') {

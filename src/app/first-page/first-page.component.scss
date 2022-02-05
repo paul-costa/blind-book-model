@@ -46,6 +46,9 @@
         }
 
         .filter-section {
+          z-index: 2;
+          background-color: rgba(125, 125, 125, 0.75);
+
           .divider {
             color:rgb(235, 235, 235);
             border-top-width: 2px;
@@ -94,7 +97,7 @@
         }
 
         .inner-mat-card {
-          background-color: rgb(75, 75, 75);
+          background-color: rgba(75, 75, 75, 0.2);
           width: 100%;
           height: 100%;
 
@@ -104,6 +107,10 @@
 
           max-width: 40%;
           max-height: 70%;
+
+          .property {
+            margin: 0;
+          }
 
           @media (max-width: 1024px) {
             max-width: 45%;

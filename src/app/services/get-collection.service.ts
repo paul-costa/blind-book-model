@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
-import { BookModel, GenreNames, Mood, NomScale, RelatedFields, Series, Trigger } from '../Models/BlindBookModel.model';
+import { BookModel, GenreNames, Mood, NomScale, RelatedFields, Series, Trigger } from '../Models/BookModel.model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +20,8 @@ export class GetCollectionService {
       },
 
       character:{
-        genreName: [GenreNames.Fantasy],
-        trigger: [Trigger.drugs],
+        genreName: [GenreNames.Fantasy, GenreNames.Erotica],
+        trigger: [],
         mood: [Mood.dark],
         paced: NomScale.low,
         series: Series.standalone,

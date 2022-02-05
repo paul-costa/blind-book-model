@@ -13,11 +13,11 @@
           </div>
           <mat-divider class="divider"></mat-divider>
 
-          <div class="filter-menue">
+          <div class="filter-menu">
             <!-- TODO: implement filter menu -->
           </div>
+          <mat-divider></mat-divider>
         </div>
-        <mat-divider></mat-divider>
       </mat-card-header>
 
       <mat-card-content>
@@ -26,7 +26,27 @@
 
           <mat-card class="inner-mat-card">
             <!-- TODO (Textfelder) -->
-            <!-- Genre, Mood, Triggerwarnung -->
+            <p class="property">Genre:
+              <span *ngFor="let genreEl of selectedBook.character.genreName; let i = index">
+                <span>{{ genreNames[genreEl] }}</span>
+                <span *ngIf="i+1 < selectedBook.character.genreName.length">, </span>
+              </span>
+            </p>
+            <p class="property">Mood:
+              <span *ngFor="let moodEl of selectedBook.character.mood; let i = index">
+                <span>{{ mood[moodEl] }}</span>
+                <span *ngIf="i+1 < selectedBook.character.mood.length">, </span>
+              </span>
+            </p>
+            <p class="property">Trigger:
+              <span *ngFor="let triggerEl of selectedBook.character.trigger; let i = index">
+                <span>{{ trigger[triggerEl] }}</span>
+                <span *ngIf="i+1 < selectedBook.character.trigger.length">, </span>
+              </span>
+              <span *ngIf="!selectedBook.character.trigger.length">N/A</span>
+            </p>
+
+
             <!-- Series, Pace & Adaption -->
             <!-- abstand -->
             <!-- Textfeld für additionalInfo.text -->
